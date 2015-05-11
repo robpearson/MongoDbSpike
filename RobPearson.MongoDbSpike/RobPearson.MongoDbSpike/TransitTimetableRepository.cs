@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RobPearson.MongoDbSpike.Model;
 
 namespace RobPearson.MongoDbSpike
 {
-    class TransitTimetableRepository
+    public interface ITransitTimetableRepository
     {
+        IEnumerable<TransitTripDetail> GetTimetable(DateTime date);
+    }
+
+    public class TransitTimetableRepository : ITransitTimetableRepository
+    {
+        public IEnumerable<TransitTripDetail> GetTimetable(DateTime date)
+        {
+            return null;
+        }
     }
 }

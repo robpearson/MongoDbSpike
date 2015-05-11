@@ -1,12 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using RobPearson.MongoDbSpike.Model;
 
 namespace RobPearson.MongoDbSpike
 {
-    class SettingsRepository
+    public interface ISettingsRepository
     {
+        IEnumerable<FavouriteTrip> GetAllFavouritesTrips();
+        FavouriteTrip GetFavouriteTripById(int id);
+        int SaveFavouriteTrip(FavouriteTrip trip);
+    }
+
+    public class SettingsRepository : ISettingsRepository
+    {
+        public IEnumerable<FavouriteTrip> GetAllFavouritesTrips()
+        {
+            return null;
+        }
+
+        public FavouriteTrip GetFavouriteTripById(int id)
+        {
+            return null;
+        }
+
+        public int SaveFavouriteTrip(FavouriteTrip trip)
+        {
+            return 1;
+        }
     }
 }

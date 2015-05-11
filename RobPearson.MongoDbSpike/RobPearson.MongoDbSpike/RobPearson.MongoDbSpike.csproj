@@ -50,9 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\FavouriteTrip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsRepository.cs" />
     <Compile Include="TransitTimetableRepository.cs" />
+    <Compile Include="Model\TransitTripDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
