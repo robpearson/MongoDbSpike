@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobPearson.MongoDbSpike", "RobPearson.MongoDbSpike\RobPearson.MongoDbSpike.csproj", "{6CB3CE3A-0297-4937-AA9F-9543134D94E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobPearson.MongoDbSpike.Test", "RobPearson.MongoDbSpike.Test\RobPearson.MongoDbSpike.Test.csproj", "{653E7F7C-4BEB-4CCF-94FF-EA20689243BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{06EF4BF3-01C6-48E5-AD05-0205F591E526}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CB3CE3A-0297-4937-AA9F-9543134D94E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB3CE3A-0297-4937-AA9F-9543134D94E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB3CE3A-0297-4937-AA9F-9543134D94E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB3CE3A-0297-4937-AA9F-9543134D94E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653E7F7C-4BEB-4CCF-94FF-EA20689243BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653E7F7C-4BEB-4CCF-94FF-EA20689243BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653E7F7C-4BEB-4CCF-94FF-EA20689243BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653E7F7C-4BEB-4CCF-94FF-EA20689243BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
