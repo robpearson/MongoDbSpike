@@ -1,7 +1,10 @@
-﻿namespace RobPearson.MongoDbSpike.Model
+﻿using MongoDB.Bson;
+
+namespace RobPearson.MongoDbSpike.Model
 {
     public class FavouriteTrip
     {
+        public ObjectId Id { get; set; }
         public string TripId { get; set; }
         public string DepartingStopId { get; set; }
         public string DepartingChildStopIds { get; set; }

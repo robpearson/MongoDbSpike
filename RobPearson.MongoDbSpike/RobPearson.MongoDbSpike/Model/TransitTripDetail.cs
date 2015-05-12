@@ -1,9 +1,11 @@
 ﻿using System;
+using MongoDB.Bson;
 
 namespace RobPearson.MongoDbSpike.Model
 {
     public class TransitTripDetail
     {
+        public ObjectId Id { get; set; }
         public string RouteShortName { get; set; }
         public string RouteLongName { get; set; }
         public string DepartingStopName { get; set; }
