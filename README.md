@@ -6,10 +6,12 @@ Simple Spike to explore MongoDB.
 Exploring NoSQL and MongoDB by trying to implement saving/retrieving data from hitting some fictional example endpoints.
 
 - [ ] https://api.maplepixel.io/transit/timetables/2015-05-02 - GET Transit timetables
-- [ ] https://api.maplepixel.io/settings/favouritetrip/ - POST to save a new favourite trip
-- [ ] https://api.maplepixel.io/settings/favouritetrip/1 - GET to retrieve an existing favourite trip
+- [x] https://api.maplepixel.io/settings/favouritetrip/ - POST to save a new favourite trip
+- [x] https://api.maplepixel.io/settings/favouritetrip/1 - GET to retrieve an existing favourite trip
 
 Interested to see how easy it is to define the data model (if needed) and time to persist/retrieve data.
+
+Update: Implemented `SettingsRepository` to explore saving and retrieving entities and it works pretty well.  Further work on a composite/complex entity would be good in the future.
 
 ## Requirements
 

@@ -6,6 +6,8 @@ using RobPearson.MongoDbSpike.Model;
 
 namespace RobPearson.MongoDbSpike
 {
+    // TODO: Needs Updating to be consistent with the Settings Repo and Cleanup Dupe Code.
+
     public interface ITransitTimetableRepository
     {
         Task<IAsyncCursor<TransitTripDetail>> GetTimetable(DateTime date);
@@ -14,7 +16,7 @@ namespace RobPearson.MongoDbSpike
 
     public class TransitTimetableRepository : ITransitTimetableRepository
     {
-        private string connectionString;
+        private readonly string connectionString;
         public const string DatabaseName = "SpikeDB";
 
         public TransitTimetableRepository()
@@ -24,7 +26,7 @@ namespace RobPearson.MongoDbSpike
 
         public TransitTimetableRepository(string connectionString)
         {
-            this.connectionString = "mongodb://spikeuser:cieqi6xKaNCr2HfvVNzB@ds063809.mongolab.com:63809/spikedb";
+            this.connectionString = connectionString;
         }
 
         public async Task<IAsyncCursor<TransitTripDetail>> GetTimetable(DateTime date)

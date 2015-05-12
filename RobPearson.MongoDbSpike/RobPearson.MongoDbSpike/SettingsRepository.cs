@@ -8,17 +8,16 @@ namespace RobPearson.MongoDbSpike
 {
     public interface ISettingsRepository
     {
-        IEnumerable<FavouriteTrip> GetAllFavouritesTrips();
-        FavouriteTrip GetFavouriteTripById(int id);
+        Task<IEnumerable<FavouriteTrip>> GetAllFavouritesTrips();
+        Task<FavouriteTrip> GetFavouriteTripById(string id);
         Task<string> SaveFavouriteTrip(FavouriteTrip trip);
     }
 
     public class SettingsRepository : ISettingsRepository
     {
         private readonly string connectionString;
-        
-        public const string DatabaseName = "SpikeDB";
-        private const string FavouriteTripModelName = "FavouriteTrip";
+
+        public const string DatabaseName = "spikedb";
 
         public SettingsRepository()
         {
@@ -30,23 +29,33 @@ namespace RobPearson.MongoDbSpike
             this.connectionString = connectionString;
         }
 
-        public IEnumerable<FavouriteTrip> GetAllFavouritesTrips()
+        public async Task<IEnumerable<FavouriteTrip>> GetAllFavouritesTrips()
         {
-            return null;
+            var dbCollection = GetDbCollection();
+            var favourites = await dbCollection.Find(x => x.FavouriteTripId != null).ToListAsync();
+            return favourites;
         }
 
-        public FavouriteTrip GetFavouriteTripById(int id)
+        public async Task<FavouriteTrip> GetFavouriteTripById(string id)
         {
-            return null;
+            var dbCollection = GetDbCollection();
+            var favourite = await dbCollection.Find(c => c.FavouriteTripId == id).FirstOrDefaultAsync();
+            return favourite;
         }
 
         public async Task<string> SaveFavouriteTrip(FavouriteTrip favouriteTrip)
         {
+            var dbCollection = GetDbCollection();
+            await dbCollection.InsertOneAsync(favouriteTrip);
+            return favouriteTrip.Id.ToString();
+        }
+
+        private IMongoCollection<FavouriteTrip> GetDbCollection()
+        {
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase(DatabaseName);
-            var collection = database.GetCollection<FavouriteTrip>(FavouriteTripModelName);
-            await collection.InsertOneAsync(favouriteTrip);
-            return favouriteTrip.Id.ToString();
+            var collection = database.GetCollection<FavouriteTrip>(FavouriteTrip.ModelName);
+            return collection;
         }
     }
 }
